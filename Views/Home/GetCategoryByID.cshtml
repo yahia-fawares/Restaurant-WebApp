@@ -1,0 +1,34 @@
+﻿@model IEnumerable<UserProduct>
+@{
+  
+    Layout = "~/views/shared/HomeLayout.cshtml";
+  
+}
+<head>
+    <style>
+        .mt-50-percent {
+            margin-top: 200px;
+            margin-bottom:50px;
+        }
+    </style>
+</head>
+
+<table class="table mt-50-percent">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Sale</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Sale</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<JoinTables>
+@{
+    Layout = "~/views/shared/AdminLayout.cshtml";
+
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Product Name</th>
+            <th>Product Quantity</th>
+            <th>Category Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Customer.Fname</td>
+                <td>@item.Customer.Lname</td>
+                <td>@item.Product.Name</td>
+                <td>@item.CustomerProduct.Quantity</td>
+                <td>@item.Category.CategoryName</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
